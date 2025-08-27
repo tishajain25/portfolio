@@ -90,9 +90,9 @@ const Skills = () => {
         </div>
 
         {/* Skills layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-12 gap-y-12 md:gap-y-16">
           {/* Left Column */}
-          <div className="space-y-16 relative">
+          <div className="space-y-12 md:space-y-16 relative">
             {/* Decorative element */}
             <div className="absolute -left-4 top-10 h-full w-1 bg-gradient-to-b from-teal-500/30 to-blue-500/20 rounded-full hidden md:block"></div>
             

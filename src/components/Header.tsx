@@ -87,14 +87,14 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden absolute top-16 left-0 right-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-lg">
-            <nav className="px-4 py-4 space-y-2">
+            <nav className="px-4 py-2 space-y-1">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left py-2 text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-200"
+                  className="block w-full text-left py-2.5 px-2 text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors duration-200 font-medium text-sm"
                 >
-                  {item.name}
+                  {item.name === 'Experience' ? 'Prof. Experience' : item.name}
                 </button>
               ))}
             </nav>

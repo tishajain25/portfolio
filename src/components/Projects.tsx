@@ -178,12 +178,12 @@ const Projects = () => {
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 px-2 sm:px-4">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+              className={`px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-base rounded-full font-medium transition-all duration-300 ${
                 selectedCategory === category
                   ? 'bg-teal-600 text-white shadow-lg transform scale-105'
                   : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-teal-50 dark:hover:bg-gray-600 shadow-md hover:shadow-lg'
@@ -195,7 +195,7 @@ const Projects = () => {
         </div>
 
         {/* Featured Projects Grid */}
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
+        <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 mb-16">
           {filteredProjects.map((project, index) => (
             <div
               key={index}
@@ -224,25 +224,30 @@ const Projects = () => {
               </div>
 
               {/* Project Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3 sm:mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
                 {/* Technologies */}
-                <div className="mb-4">
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
+                <div className="mb-3 sm:mb-4">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                    {project.technologies.slice(0, 6).map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded-full"
+                        className="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded-full"
                       >
                         {tech}
                       </span>
                     ))}
+                    {project.technologies.length > 6 && (
+                      <span className="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded-full">
+                        +{project.technologies.length - 6} more
+                      </span>
+                    )}
                   </div>
                 </div>
 
@@ -286,7 +291,7 @@ const Projects = () => {
         </div>
 
         {/* Project Stats */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-12 sm:mt-16">
           {[
             { number: "7+", label: "Projects Completed", icon: "🚀" },
             { number: "3", label: "AI Integrations", icon: "🤖" },
@@ -295,9 +300,9 @@ const Projects = () => {
           ].map((stat, index) => (
             <div
               key={index}
-              className="text-center bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+              className="text-center bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
             >
-              <div className="text-3xl mb-2">{stat.icon}</div>
+              <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">{stat.icon}</div>
               <div className="text-2xl font-bold text-teal-600 dark:text-teal-400 mb-1">
                 {stat.number}
               </div>
