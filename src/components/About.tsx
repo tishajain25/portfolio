@@ -6,7 +6,7 @@ const About = () => {
       institution: "University of Petroleum and Energy Studies",
       period: "2021-2025",
       score: "CGPA: 9.1/10.0",
-      status: "current"
+      status: "completed"
     },
     {
       degree: "Class XII CBSE",
@@ -25,12 +25,12 @@ const About = () => {
   ];
 
   const achievements = [
+    "AWS Certified Solutions Architect - Associate",
     "Microsoft Certified: Azure AI Fundamentals",
     "Technical Content Writer & Co-author of DevOps book",
-    "Research Intern with industry experience",
-    "School Topper & Binary Wits Runner-up",
+    "Research Intern at IIT Patna",
     "NSS Volunteer with community impact",
-    "IEEE Technical Elite Member"
+    "IEEE Technical Elite & ACM-W Core Committee Member"
   ];
 
   return (
@@ -51,19 +51,22 @@ const About = () => {
             </h3>
             <div className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
               <p>
-                I'm a final-year Computer Science & Engineering student at the University of Petroleum 
-                and Energy Studies with a 9.1 CGPA. My journey in technology is driven by a passion for 
-                creating accessible, AI-powered solutions that make a real impact.
+                I'm a Computer Science & Engineering graduate from the University of Petroleum 
+                and Energy Studies with a 9.1 CGPA. As an AWS Certified Solutions Architect and Azure AI specialist, 
+                my journey in technology is driven by a passion for creating accessible, AI-powered solutions that 
+                make a real impact.
               </p>
               <p>
-                From developing sign language interpreters to building real-time chat applications, 
-                I thrive on challenges that combine technical innovation with social good. My expertise 
-                spans frontend development, AI integration, and full-stack web development.
+                From developing SignBridge (a bidirectional sign language interpreter) to building real-time chat 
+                applications with secure encryption, I thrive on challenges that combine technical innovation with 
+                social good. My expertise spans frontend development, AI integration, and full-stack web development 
+                using React, Node.js, and Python.
               </p>
               <p>
-                Beyond coding, I'm a technical content writer, public speaker, and dancer who believes 
-                in the power of diverse experiences to fuel creativity in tech. I'm passionate about 
-                making technology more accessible and inclusive for everyone.
+                Beyond coding, I'm a published technical content writer, having co-authored a DevOps book on Continuous 
+                Deployment & Automation. I'm also passionate about public speaking, dancing, and using technology to 
+                create inclusive solutions for all users. My experience at TechCurators and IIT Patna has further 
+                strengthened my ability to develop real-world applications that solve meaningful problems.
               </p>
             </div>
 

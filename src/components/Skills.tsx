@@ -7,26 +7,45 @@ const Skills = () => {
       { name: 'CSS3', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', color: 'text-blue-500', bg: 'bg-blue-100 dark:bg-blue-900/30' },
       { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', color: 'text-yellow-500', bg: 'bg-yellow-100 dark:bg-yellow-900/30' },
       { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', color: 'text-blue-600', bg: 'bg-blue-100 dark:bg-blue-900/30' },
+      { name: 'Tailwind CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg', color: 'text-teal-500', bg: 'bg-teal-100 dark:bg-teal-900/30' },
     ],
     'Backend': [
       { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', color: 'text-green-500', bg: 'bg-green-100 dark:bg-green-900/30' },
       { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg', color: 'text-green-600', bg: 'bg-green-100 dark:bg-green-900/30' },
       { name: 'Java', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', color: 'text-orange-600', bg: 'bg-orange-100 dark:bg-orange-900/30' },
+      { name: 'C', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg', color: 'text-blue-600', bg: 'bg-blue-100 dark:bg-blue-900/30' },
+      { name: 'Express', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg', color: 'text-gray-600', bg: 'bg-gray-100 dark:bg-gray-800' },
     ],
     'Database': [
       { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', color: 'text-green-600', bg: 'bg-green-100 dark:bg-green-900/30' },
       { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', color: 'text-blue-600', bg: 'bg-blue-100 dark:bg-blue-900/30' },
+      { name: 'SQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg', color: 'text-indigo-600', bg: 'bg-indigo-100 dark:bg-indigo-900/30' },
+      { name: 'Firebase', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg', color: 'text-yellow-500', bg: 'bg-yellow-100 dark:bg-yellow-900/30' },
     ],
-    'Tools & Others': [
+    'DevOps & Cloud': [
+      { name: 'AWS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg', color: 'text-yellow-600', bg: 'bg-yellow-100 dark:bg-yellow-900/30' },
+      { name: 'Azure', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg', color: 'text-blue-500', bg: 'bg-blue-100 dark:bg-blue-900/30' },
       { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', color: 'text-orange-600', bg: 'bg-orange-100 dark:bg-orange-900/30' },
+      { name: 'Linux', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', color: 'text-yellow-600', bg: 'bg-yellow-100 dark:bg-yellow-900/30' },
+    ],
+    'AI & Others': [
       { name: 'TensorFlow', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg', color: 'text-orange-500', bg: 'bg-orange-100 dark:bg-orange-900/30' },
       { name: 'Flutter', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg', color: 'text-blue-400', bg: 'bg-blue-100 dark:bg-blue-900/30' },
+      { name: 'Android', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg', color: 'text-green-500', bg: 'bg-green-100 dark:bg-green-900/30' },
       { name: 'Figma', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg', color: 'text-purple-500', bg: 'bg-purple-100 dark:bg-purple-900/30' },
-      { name: 'Linux', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', color: 'text-yellow-600', bg: 'bg-yellow-100 dark:bg-yellow-900/30' },
     ]
   };
 
-  const achievements = [
+    const achievements = [
+    {
+      title: "AWS Certified Solutions Architect",
+      organization: "Amazon Web Services",
+      type: "Certification",
+      icon: "🏆",
+      gradientClass: "from-yellow-500 to-orange-600",
+      hoverBg: "hover:bg-yellow-50 dark:hover:bg-yellow-900/10",
+      year: "2025"
+    },
     {
       title: "Microsoft Azure AI Fundamentals",
       organization: "Microsoft",
@@ -34,16 +53,7 @@ const Skills = () => {
       icon: "🏆",
       gradientClass: "from-blue-500 to-blue-600",
       hoverBg: "hover:bg-blue-50 dark:hover:bg-blue-900/10",
-      year: "2024"
-    },
-    {
-      title: "Technical Content Writer",
-      organization: "Tech Industry",
-      type: "Professional Role",
-      icon: "✍️",
-      gradientClass: "from-purple-500 to-purple-600",
-      hoverBg: "hover:bg-purple-50 dark:hover:bg-purple-900/10",
-      year: "Ongoing"
+      year: "2023"
     },
     {
       title: "DevOps Book Co-author",
@@ -52,7 +62,7 @@ const Skills = () => {
       icon: "📚",
       gradientClass: "from-green-500 to-green-600",
       hoverBg: "hover:bg-green-50 dark:hover:bg-green-900/10",
-      year: "2024"
+      year: "2023"
     },
     {
       title: "Research Intern",
@@ -61,7 +71,7 @@ const Skills = () => {
       icon: "🔬",
       gradientClass: "from-orange-500 to-orange-600",
       hoverBg: "hover:bg-orange-50 dark:hover:bg-orange-900/10",
-      year: "2023"
+      year: "2024"
     }
   ];
 

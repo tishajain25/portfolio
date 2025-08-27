@@ -41,8 +41,14 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="font-bold text-xl text-gray-900 dark:text-white">
-            Tisha Jain
+          <div className="flex items-center">
+            <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('#home'); }}>
+              {isDark ? (
+                <img src="/DarkBgLogo.png" alt="Tisha Jain Logo" className="h-8 w-fit" />
+              ) : (
+                <img src="/Logo-removebg.png" alt="Tisha Jain Logo" className="h-8 w-fit" />
+              )}
+            </a>
           </div>
 
           {/* Desktop Navigation */}

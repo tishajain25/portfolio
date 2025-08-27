@@ -2,33 +2,33 @@
 const Experience = () => {
   const experiences = [
     {
-      title: "Frontend & AI Developer Intern",
-      company: "TechCurators",
+      title: "Frontend & AI Developer",
+      company: "TechCurators, a TC Group Company",
       period: "Dec 2024 - Present",
-      location: "Remote",
+      location: "New Delhi",
       status: "current",
-      description: "Leading TOSS platform development with AI integration, focusing on user experience and innovative AI-powered features.",
-      technologies: ["Next.js", "JavaScript", "Tailwind CSS", "Figma", "ChatGPT-4o"],
+      description: "Developing responsive web interfaces and integrating AI capabilities into client projects and internal platforms.",
+      technologies: ["Next.js", "JavaScript", "Tailwind CSS", "Figma", "ChatGPT-4o", "Relevance AI"],
       achievements: [
-        "Spearheading AI integration into web platforms",
-        "Designing responsive user interfaces with modern frameworks",
-        "Collaborating with cross-functional teams on product development",
-        "Implementing cutting-edge frontend technologies"
+        "Led frontend development of TOSS, an AI-driven SEO and branding platform",
+        "Integrated dynamic UI components based on five natural elements",
+        "Implemented AI capabilities using ChatGPT-4o and Relevance AI",
+        "Created automated Lighthouse report analysis and data extraction agents"
       ]
     },
     {
       title: "Web & App Developer Intern",
-      company: "IIT Patna",
+      company: "Indian Institute of Technology (IIT) Patna",
       period: "Jun - Aug 2024",
       location: "Patna, India",
       status: "completed",
-      description: "Focused on cross-platform development and team collaboration, contributing to multiple web and mobile application projects.",
-      technologies: ["ReactJS", "Flutter", "Bootstrap", "Mobile Development"],
+      description: "Developed and maintained responsive websites and mobile applications, ensuring cross-platform functionality and enhanced user experience.",
+      technologies: ["ReactJS", "HTML/CSS", "JavaScript", "Bootstrap", "Flutter", "Git"],
       achievements: [
-        "Developed cross-platform applications using React and Flutter",
-        "Collaborated with research teams on technical solutions",
-        "Implemented responsive web designs using Bootstrap",
-        "Gained experience in academic research environment"
+        "Developed and maintained responsive websites for institutional needs",
+        "Built cross-platform mobile applications with Flutter",
+        "Collaborated with cross-functional teams on design and feature implementation",
+        "Applied agile development methodologies in an academic research environment"
       ]
     }
   ];
@@ -144,21 +144,21 @@ const Experience = () => {
                 role: "NSS Volunteer",
                 organization: "National Service Scheme",
                 period: "Jan 2023 - May 2024",
-                description: "Community service and social impact initiatives",
+                description: "Identified community needs and problems, implemented solutions through service and social initiatives",
                 impact: "Community Development"
               },
               {
                 role: "IEEE Technical Elite",
-                organization: "IEEE Student Branch",
+                organization: "IEEE Student Branch, UPES",
                 period: "May 2022 - May 2023",
-                description: "Technical leadership and portal development",
+                description: "Worked in the Student Chapter as a technical elite, assisted in planning and implementation of chapter portal",
                 impact: "Technical Leadership"
               },
               {
-                role: "ACM-W Core Committee",
-                organization: "Association for Computing Machinery",
+                role: "Core Committee Member",
+                organization: "ACM-W Student Chapter, UPES",
                 period: "Nov 2021 - Jun 2022",
-                description: "Women in computing advocacy and events",
+                description: "Served as CSR Core Committee member in the Student Chapter, promoting women in computing",
                 impact: "Diversity & Inclusion"
               }
             ].map((role, index) => (
