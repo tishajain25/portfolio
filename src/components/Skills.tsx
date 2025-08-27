@@ -7,7 +7,7 @@ const Skills = () => {
       { name: 'CSS3', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', color: 'text-blue-500', bg: 'bg-blue-100 dark:bg-blue-900/30' },
       { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', color: 'text-yellow-500', bg: 'bg-yellow-100 dark:bg-yellow-900/30' },
       { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', color: 'text-blue-600', bg: 'bg-blue-100 dark:bg-blue-900/30' },
-      { name: 'Tailwind CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg', color: 'text-teal-500', bg: 'bg-teal-100 dark:bg-teal-900/30' },
+      { name: 'Tailwind CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg', color: 'text-teal-500', bg: 'bg-teal-100 dark:bg-teal-900/30' },
     ],
     'Backend': [
       { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', color: 'text-green-500', bg: 'bg-green-100 dark:bg-green-900/30' },
@@ -23,7 +23,7 @@ const Skills = () => {
       { name: 'Firebase', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg', color: 'text-yellow-500', bg: 'bg-yellow-100 dark:bg-yellow-900/30' },
     ],
     'DevOps & Cloud': [
-      { name: 'AWS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg', color: 'text-yellow-600', bg: 'bg-yellow-100 dark:bg-yellow-900/30' },
+      { name: 'AWS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg', color: 'text-yellow-600', bg: 'bg-yellow-100 dark:bg-yellow-900/30' },
       { name: 'Azure', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg', color: 'text-blue-500', bg: 'bg-blue-100 dark:bg-blue-900/30' },
       { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', color: 'text-orange-600', bg: 'bg-orange-100 dark:bg-orange-900/30' },
       { name: 'Linux', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', color: 'text-yellow-600', bg: 'bg-yellow-100 dark:bg-yellow-900/30' },
@@ -80,33 +80,44 @@ const Skills = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Skills
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Technical Skills
           </h2>
-          <div className="w-24 h-1 bg-teal-600 mx-auto mb-8"></div>
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-blue-500 mx-auto mb-6"></div>
+          <p className="text-base text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             Technologies and tools I use to build amazing digital experiences
           </p>
         </div>
 
-        {/* Skills Categories */}
-        <div className="space-y-12">
-          {Object.entries(skillCategories).map(([category, technologies]) => (
-            <div key={category} className="mb-16">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center lg:text-left">
-                {category}
+        {/* Skills layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+          {/* Left Column */}
+          <div className="space-y-16 relative">
+            {/* Decorative element */}
+            <div className="absolute -left-4 top-10 h-full w-1 bg-gradient-to-b from-teal-500/30 to-blue-500/20 rounded-full hidden md:block"></div>
+            
+            {/* Frontend Section */}
+            <div className="relative">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                <span className="relative mr-2 group">
+                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-teal-500 rounded"></span>
+                  Frontend
+                </span>
+                <span className="text-xs font-normal text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/20 px-2 py-0.5 rounded-full ml-2">
+                  UI/UX
+                </span>
               </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                {technologies.map((tech, index) => (
+              <div className="flex flex-wrap gap-6 mt-4">
+                {skillCategories['Frontend'].map((tech, index) => (
                   <div
                     key={index}
-                    className="group relative flex flex-col items-center p-6 rounded-xl bg-white dark:bg-gray-900 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105"
+                    className="group flex items-center gap-2 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-300"
                   >
-                    <div className={`mb-3 p-4 rounded-full ${tech.bg} group-hover:animate-pulse flex items-center justify-center`}>
+                    <div className="flex items-center justify-center">
                       <img 
                         src={tech.logo} 
                         alt={tech.name} 
-                        className="w-12 h-12 object-contain filter dark:brightness-110"
+                        className="w-5 h-5 object-contain"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           const fallback = target.nextElementSibling as HTMLElement;
@@ -114,30 +125,205 @@ const Skills = () => {
                           fallback?.classList.remove('hidden');
                         }}
                       />
-                      <div className="w-12 h-12 bg-gray-300 dark:bg-gray-600 rounded items-center justify-center text-gray-600 dark:text-gray-300 text-xs font-medium hidden">
+                      <div className="w-5 h-5 hidden text-xs font-medium">
                         {tech.name.charAt(0)}
                       </div>
                     </div>
-                    <span className={`font-semibold text-sm text-center ${tech.color} group-hover:scale-110 transition-transform duration-300`}>
+                    <span className="font-medium text-sm">
                       {tech.name}
                     </span>
-                    
-                    {/* Hover Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-teal-500/10 to-blue-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                 ))}
               </div>
             </div>
-          ))}
+            
+            {/* Backend Section */}
+            <div className="relative">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                <span className="relative mr-2 group">
+                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-blue-500 rounded"></span>
+                  Backend
+                </span>
+                <span className="text-xs font-normal text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-2 py-0.5 rounded-full ml-2">
+                  Server-side
+                </span>
+              </h3>
+              <div className="flex flex-wrap gap-6 mt-4">
+                {skillCategories['Backend'].map((tech, index) => (
+                  <div
+                    key={index}
+                    className="group flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300"
+                  >
+                    <div className="flex items-center justify-center">
+                      <img 
+                        src={tech.logo} 
+                        alt={tech.name} 
+                        className="w-5 h-5 object-contain"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          const fallback = target.nextElementSibling as HTMLElement;
+                          target.classList.add('hidden');
+                          fallback?.classList.remove('hidden');
+                        }}
+                      />
+                      <div className="w-5 h-5 hidden text-xs font-medium">
+                        {tech.name.charAt(0)}
+                      </div>
+                    </div>
+                    <span className="font-medium text-sm">
+                      {tech.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Database Section */}
+            <div className="relative">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                <span className="relative mr-2 group">
+                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-purple-500 rounded"></span>
+                  Database
+                </span>
+                <span className="text-xs font-normal text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-900/20 px-2 py-0.5 rounded-full ml-2">
+                  Storage
+                </span>
+              </h3>
+              <div className="flex flex-wrap gap-6 mt-4">
+                {skillCategories['Database'].map((tech, index) => (
+                  <div
+                    key={index}
+                    className="group flex items-center gap-2 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-300"
+                  >
+                    <div className="flex items-center justify-center">
+                      <img 
+                        src={tech.logo} 
+                        alt={tech.name} 
+                        className="w-5 h-5 object-contain"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          const fallback = target.nextElementSibling as HTMLElement;
+                          target.classList.add('hidden');
+                          fallback?.classList.remove('hidden');
+                        }}
+                      />
+                      <div className="w-5 h-5 hidden text-xs font-medium">
+                        {tech.name.charAt(0)}
+                      </div>
+                    </div>
+                    <span className="font-medium text-sm">
+                      {tech.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          {/* Right Column */}
+          <div className="space-y-16 relative">
+            {/* Decorative element */}
+            <div className="absolute -left-4 top-10 h-full w-1 bg-gradient-to-b from-blue-500/30 to-purple-500/20 rounded-full hidden md:block"></div>
+            
+            {/* DevOps & Cloud Section */}
+            <div className="relative">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                <span className="relative mr-2 group">
+                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-orange-500 rounded"></span>
+                  DevOps & Cloud
+                </span>
+                <span className="text-xs font-normal text-orange-600 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/20 px-2 py-0.5 rounded-full ml-2">
+                  Infrastructure
+                </span>
+              </h3>
+              <div className="flex flex-wrap gap-6 mt-4">
+                {skillCategories['DevOps & Cloud'].map((tech, index) => (
+                  <div
+                    key={index}
+                    className="group flex items-center gap-2 hover:text-orange-600 dark:hover:text-orange-400 transition-all duration-300"
+                  >
+                    <div className="flex items-center justify-center">
+                      <img 
+                        src={tech.logo} 
+                        alt={tech.name} 
+                        className="w-5 h-5 object-contain"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          const fallback = target.nextElementSibling as HTMLElement;
+                          target.classList.add('hidden');
+                          fallback?.classList.remove('hidden');
+                        }}
+                      />
+                      <div className="w-5 h-5 hidden text-xs font-medium">
+                        {tech.name.charAt(0)}
+                      </div>
+                    </div>
+                    <span className="font-medium text-sm">
+                      {tech.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* AI & Others Section */}
+            <div className="relative">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                <span className="relative mr-2 group">
+                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-pink-500 rounded"></span>
+                  AI & Others
+                </span>
+                <span className="text-xs font-normal text-pink-600 dark:text-pink-400 bg-pink-50 dark:bg-pink-900/20 px-2 py-0.5 rounded-full ml-2">
+                  Specialized
+                </span>
+              </h3>
+              <div className="flex flex-wrap gap-6 mt-4">
+                {skillCategories['AI & Others'].map((tech, index) => (
+                  <div
+                    key={index}
+                    className="group flex items-center gap-2 hover:text-pink-600 dark:hover:text-pink-400 transition-all duration-300"
+                  >
+                    <div className="flex items-center justify-center">
+                      <img 
+                        src={tech.logo} 
+                        alt={tech.name} 
+                        className="w-5 h-5 object-contain"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          const fallback = target.nextElementSibling as HTMLElement;
+                          target.classList.add('hidden');
+                          fallback?.classList.remove('hidden');
+                        }}
+                      />
+                      <div className="w-5 h-5 hidden text-xs font-medium">
+                        {tech.name.charAt(0)}
+                      </div>
+                    </div>
+                    <span className="font-medium text-sm">
+                      {tech.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Achievements & Experience Section */}
-        <div className="mt-20 pt-16 border-t border-gray-200 dark:border-gray-700">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        <div className="mt-20 pt-12 border-t border-gray-200 dark:border-gray-700 relative">
+          {/* Decorative elements */}
+          <div className="absolute top-0 left-1/4 transform -translate-y-1/2">
+            <div className="h-1 w-20 bg-gradient-to-r from-teal-500 to-transparent rounded-full"></div>
+          </div>
+          <div className="absolute top-0 right-1/4 transform -translate-y-1/2">
+            <div className="h-1 w-20 bg-gradient-to-l from-blue-500 to-transparent rounded-full"></div>
+          </div>
+          
+          <div className="text-center mb-10">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
               Achievements & Experience
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-sm">
               Professional milestones and recognitions that showcase my expertise
             </p>
           </div>

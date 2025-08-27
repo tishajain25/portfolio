@@ -24,15 +24,6 @@ const About = () => {
     }
   ];
 
-  const achievements = [
-    "AWS Certified Solutions Architect - Associate",
-    "Microsoft Certified: Azure AI Fundamentals",
-    "Technical Content Writer & Co-author of DevOps book",
-    "Research Intern at IIT Patna",
-    "NSS Volunteer with community impact",
-    "IEEE Technical Elite & ACM-W Core Committee Member"
-  ];
-
   return (
     <section id="about" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,21 +59,6 @@ const About = () => {
                 create inclusive solutions for all users. My experience at TechCurators and IIT Patna has further 
                 strengthened my ability to develop real-world applications that solve meaningful problems.
               </p>
-            </div>
-
-            {/* Achievements Grid */}
-            <div className="mt-8">
-              <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                Key Achievements
-              </h4>
-              <div className="grid sm:grid-cols-2 gap-3">
-                {achievements.map((achievement, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-teal-600 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-gray-700 dark:text-gray-300">{achievement}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
 

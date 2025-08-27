@@ -6,11 +6,11 @@ export const FaviconFixer = () => {
     // Force favicon update on component mount
     const link = document.querySelector('link[rel="icon"]') as HTMLLinkElement;
     if (link) {
-      link.href = '/favicon.ico?' + new Date().getTime();
+      link.href = '/favicon_new.ico?' + new Date().getTime();
     } else {
       const newLink = document.createElement('link');
       newLink.rel = 'icon';
-      newLink.href = '/favicon.ico?' + new Date().getTime();
+      newLink.href = '/favicon_new.ico?' + new Date().getTime();
       newLink.type = 'image/x-icon';
       document.head.appendChild(newLink);
     }
