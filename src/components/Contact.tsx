@@ -30,32 +30,37 @@ const Contact = () => {
     setFormStatus({ ...formStatus, submitting: true });
     
     try {
-      // Get your own EmailJS keys by signing up at https://www.emailjs.com/
-      const serviceId = 'YOUR_EMAILJS_SERVICE_ID'; // Replace with your service ID
-      const templateId = 'YOUR_EMAILJS_TEMPLATE_ID'; // Replace with your template ID
-      const publicKey = 'YOUR_EMAILJS_PUBLIC_KEY'; // Replace with your public key
+      // EmailJS configuration from environment variables
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
       
-      // Send email via EmailJS
-      if (form.current) {
-        // Add the recipient email to the form data
-        const formWithRecipient = {
-          ...formData,
-          to_email: 'jaintisha2530@gmail.com'
-        };
-        
-        // Initialize EmailJS with your public key
-        emailjs.init(publicKey);
-        
-        // Send the email
-        await emailjs.send(
-          serviceId, 
-          templateId, 
-          formWithRecipient, 
-          publicKey
-        );
+      // Validate that environment variables are present
+      if (!serviceId || !templateId || !publicKey) {
+        console.error('Missing EmailJS environment variables');
+        throw new Error('Email service configuration error');
       }
       
-      console.log('Email sent successfully!');
+      // Initialize EmailJS with your public key
+      emailjs.init(publicKey);
+      
+      // Add hidden field for recipient email if not already in the form
+      if (form.current && !form.current.querySelector('input[name="to_email"]')) {
+        const hiddenField = document.createElement('input');
+        hiddenField.type = 'hidden';
+        hiddenField.name = 'to_email';
+        hiddenField.value = 'jaintisha2530@gmail.com';
+        form.current.appendChild(hiddenField);
+      }
+      
+      // Send the email
+      const result = await emailjs.sendForm(
+        serviceId, 
+        templateId, 
+        form.current as HTMLFormElement
+      );
+      
+      console.log('Email sent successfully!', result.text);
       setFormStatus({
         submitting: false,
         submitted: true,
