@@ -41,7 +41,7 @@ const Footer = () => {
             <h3 className="text-2xl font-bold mb-4">Tisha Jain</h3>
             <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
               Frontend & AI Developer passionate about creating accessible, innovative solutions 
-              that bridge technology and social impact. Currently pursuing B.Tech CSE with 9.1 CGPA.
+              that bridge technology and social impact.
             </p>
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
