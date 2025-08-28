@@ -37,30 +37,38 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Personal Bio */}
           <div className="space-y-4 sm:space-y-6">
-            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">
-              My Journey
-            </h3>
-            <div className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed space-y-3 sm:space-y-4">
-              <p>
-                I'm a Computer Science & Engineering graduate from the University of Petroleum 
-                and Energy Studies with a 9.1 CGPA. As an AWS Certified Solutions Architect and Azure AI specialist, 
-                my journey in technology is driven by a passion for creating accessible, AI-powered solutions that 
-                make a real impact.
-              </p>
-              <p>
-                From developing SignBridge (a bidirectional sign language interpreter) to building real-time chat 
-                applications with secure encryption, I thrive on challenges that combine technical innovation with 
-                social good. My expertise spans frontend development, AI integration, and full-stack web development 
-                using React, Node.js, and Python.
-              </p>
-              <p>
-                Beyond coding, I'm a published technical content writer, having co-authored a DevOps book on Continuous 
-                Deployment & Automation. I'm also passionate about public speaking, dancing, and using technology to 
-                create inclusive solutions for all users. My experience at TechCurators and IIT Patna has further 
-                strengthened my ability to develop real-world applications that solve meaningful problems.
-              </p>
-            </div>
-          </div>
+  <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">
+    My Journey
+  </h3>
+  <div className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed space-y-3 sm:space-y-4">
+    <p>
+      My journey in technology began with 
+      <span className="font-semibold text-teal-600 dark:text-teal-400"> curiosity</span> and a desire 
+      to understand how things work beneath the surface. That curiosity soon grew into a passion 
+      for creating solutions that are not only intelligent but also 
+      <span className="font-semibold text-teal-600 dark:text-teal-400"> accessible</span> and meaningful.
+    </p>
+    <p>
+      As a 
+      <span className="font-semibold text-teal-600 dark:text-teal-400"> Computer Science & Engineering </span> 
+      graduate from the 
+      <span className="font-semibold text-teal-600 dark:text-teal-400"> University of Petroleum and Energy Studies (UPES) </span> 
+      with a 
+      <span className="font-semibold text-teal-600 dark:text-teal-400"> 9.1</span> CGPA, and a certified professional in 
+      <span className="font-semibold text-teal-600 dark:text-teal-400"> AWS Solutions Architecture</span> and 
+      <span className="font-semibold text-teal-600 dark:text-teal-400"> Azure AI</span>, I’ve continually challenged myself 
+      to explore new domains—ranging from cloud technologies and AI to full-stack web development.
+    </p>
+    <p>
+      Beyond coding, I express myself through 
+      <span className="font-semibold text-teal-600 dark:text-teal-400"> public speaking</span> and 
+      <span className="font-semibold text-teal-600 dark:text-teal-400"> writing</span>, which fuel 
+      my creativity and help me connect with people. I believe that technology reaches its true potential when it is 
+      human-centered, and my journey is guided by the vision of building solutions that are inclusive, impactful, and transformative.
+    </p>
+  </div>
+</div>
+
 
           {/* Education Timeline */}
           <div className="space-y-6 sm:space-y-8">

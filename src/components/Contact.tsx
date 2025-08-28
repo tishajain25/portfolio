@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+  const form = useRef<HTMLFormElement>(null);
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -27,13 +30,32 @@ const Contact = () => {
     setFormStatus({ ...formStatus, submitting: true });
     
     try {
-      // Example: Replace with actual form submission logic
-      // const response = await submitFormData(formData);
+      // Get your own EmailJS keys by signing up at https://www.emailjs.com/
+      const serviceId = 'YOUR_EMAILJS_SERVICE_ID'; // Replace with your service ID
+      const templateId = 'YOUR_EMAILJS_TEMPLATE_ID'; // Replace with your template ID
+      const publicKey = 'YOUR_EMAILJS_PUBLIC_KEY'; // Replace with your public key
       
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send email via EmailJS
+      if (form.current) {
+        // Add the recipient email to the form data
+        const formWithRecipient = {
+          ...formData,
+          to_email: 'jaintisha2530@gmail.com'
+        };
+        
+        // Initialize EmailJS with your public key
+        emailjs.init(publicKey);
+        
+        // Send the email
+        await emailjs.send(
+          serviceId, 
+          templateId, 
+          formWithRecipient, 
+          publicKey
+        );
+      }
       
-      console.log('Form submitted:', formData);
+      console.log('Email sent successfully!');
       setFormStatus({
         submitting: false,
         submitted: true,
@@ -172,7 +194,7 @@ const Contact = () => {
             <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent mb-4 sm:mb-6">
               Send a Message
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5 sm:mb-2">
