@@ -53,7 +53,7 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-gradient-to-br from-teal-50 via-white to-blue-50 dark:from-teal-900/20 dark:via-gray-900 dark:to-blue-900/20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent mb-6">
+          <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent mb-6 pb-2">
             Let's Work Together
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-teal-600 to-blue-600 mx-auto mb-8"></div>
