@@ -57,7 +57,7 @@ const About = () => {
       <span className="font-semibold text-teal-600 dark:text-teal-400"> 9.1</span> CGPA, and a certified professional in 
       <span className="font-semibold text-teal-600 dark:text-teal-400"> AWS Solutions Architecture</span> and 
       <span className="font-semibold text-teal-600 dark:text-teal-400"> Azure AI</span>, I’ve continually challenged myself 
-      to explore new domains—ranging from cloud technologies and AI to full-stack web development.
+      to explore new domains-ranging from cloud technologies and AI to full-stack web development.
     </p>
     <p>
       Beyond coding, I express myself through 
