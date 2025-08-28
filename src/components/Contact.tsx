@@ -7,6 +7,13 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  
+  const [formStatus, setFormStatus] = useState({
+    submitting: false,
+    submitted: false,
+    error: false,
+    message: ''
+  });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -15,17 +22,52 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+    setFormStatus({ ...formStatus, submitting: true });
+    
+    try {
+      // Example: Replace with actual form submission logic
+      // const response = await submitFormData(formData);
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      console.log('Form submitted:', formData);
+      setFormStatus({
+        submitting: false,
+        submitted: true,
+        error: false,
+        message: 'Thank you! Your message has been sent successfully.'
+      });
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+      
+      // Reset status after 5 seconds
+      setTimeout(() => {
+        setFormStatus({
+          submitting: false,
+          submitted: false,
+          error: false,
+          message: ''
+        });
+      }, 5000);
+      
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setFormStatus({
+        submitting: false,
+        submitted: false,
+        error: true,
+        message: 'Something went wrong. Please try again.'
+      });
+    }
   };
 
   const contactInfo = [
@@ -198,10 +240,21 @@ const Contact = () => {
 
               <button
                 type="submit"
+                disabled={formStatus.submitting}
                 className="w-full px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                Send Message
+                {formStatus.submitting ? 'Sending...' : 'Send Message'}
               </button>
+              
+              {/* Add status message */}
+              {formStatus.message && (
+                <div className={`mt-4 p-3 rounded-lg text-center text-sm ${
+                  formStatus.error ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400' : 
+                  'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                }`}>
+                  {formStatus.message}
+                </div>
+              )}
             </form>
           </div>
         </div>
