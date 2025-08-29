@@ -3,10 +3,9 @@ import { useEffect, useState } from 'react';
 
 const Hero = () => {
   const titles = [
-    'Frontend & AI Developer',
-    'Computer Science Engineer',
+    'Frontend Developer',
+    'AI Developer',
     'AWS Certified Solutions Architect',
-    'DevOps Book Co-Author',
     'Technical Content Writer',
   ];
 
