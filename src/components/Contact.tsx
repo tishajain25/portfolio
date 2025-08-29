@@ -225,7 +225,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5 sm:mb-2">
-                    Email Address
+                    Your Email Address
                   </label>
                   <input
                     type="email"
