@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface Project {
   title: string;
@@ -19,6 +20,26 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const projects = [
+    {
+      title: "Disease Tagging using ECG & Fundus Imaging",
+      category: "AI/Healthcare",
+      priority: 1,
+      description: "AI-based system integrating ECG and fundus image data for improved cardiovascular disease detection and early diagnosis.",
+      longDescription: "An AI-based system that integrates ECG and fundus imaging data to provide more accurate cardiovascular disease detection. This multimodal approach enables earlier and more accurate diagnosis through advanced signal processing and image analysis techniques.",
+      technologies: ["Python", "Machine Learning", "EMD Algorithm", "Medical Imaging", "AI/ML", "Signal Processing"],
+      features: [
+        "Multimodal approach combining ECG and fundus imaging",
+        "EMD (Empirical Mode Decomposition) algorithm for signal analysis",
+        "High accuracy disease classification and tagging",
+        "Advanced medical image processing techniques",
+        "Support for early and accurate diagnosis",
+        "Cardiologist-validated disease markers"
+      ],
+      impact: "Earlier detection of cardiovascular diseases leading to improved patient outcomes and treatment options",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop",
+      demoUrl: "not-available",
+      githubUrl: "#"
+    },
     {
       title: "SignBridge",
       category: "AI/Accessibility",
@@ -55,27 +76,7 @@ const Projects = () => {
         "Online/offline status indicators and typing notifications"
       ],
       impact: "Secure and reliable communication platform for seamless conversations across devices",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=300&fit=crop",
-      demoUrl: "not-available",
-      githubUrl: "#"
-    },
-    {
-      title: "Disease Tagging using ECG & Fundus Imaging",
-      category: "AI/Healthcare",
-      priority: 1,
-      description: "AI-based system integrating ECG and fundus image data for improved cardiovascular disease detection and early diagnosis.",
-      longDescription: "An AI-based system that integrates ECG and fundus imaging data to provide more accurate cardiovascular disease detection. This multimodal approach enables earlier and more accurate diagnosis through advanced signal processing and image analysis techniques.",
-      technologies: ["Python", "Machine Learning", "EMD Algorithm", "Medical Imaging", "AI/ML", "Signal Processing"],
-      features: [
-        "Multimodal approach combining ECG and fundus imaging",
-        "EMD (Empirical Mode Decomposition) algorithm for signal analysis",
-        "High accuracy disease classification and tagging",
-        "Advanced medical image processing techniques",
-        "Support for early and accurate diagnosis",
-        "Cardiologist-validated disease markers"
-      ],
-      impact: "Earlier detection of cardiovascular diseases leading to improved patient outcomes and treatment options",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop",
+      image: "/NexaTalk_Thumbnail.webp",
       demoUrl: "not-available",
       githubUrl: "#"
     },
@@ -95,7 +96,7 @@ const Projects = () => {
         "Real-time performance monitoring"
       ],
       impact: "Enhanced SEO optimization and branding capabilities for businesses through AI-powered analysis",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500&h=300&fit=crop",
+      image: "/TOSS_Thumbnail.png",
       demoUrl: "https://tosshq.com/",
       githubUrl: "#"
     },
@@ -115,27 +116,31 @@ const Projects = () => {
         "Personalized course recommendations"
       ],
       impact: "Democratizing AI education and making technology learning accessible to all skill levels",
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=500&h=300&fit=crop",
+      image: "RabbittLearning_Thumbnail.png",
       demoUrl: "https://learning.rabbitt.ai/",
       githubUrl: "#"
     },
     {
-      title: "Eunoia NYC",
+      title: "Eunoia",
       category: "Frontend",
       priority: 2,
-      description: "Elegant e-commerce platform for a premium New York perfume brand with immersive shopping experience and sleek design.",
-      longDescription: "A sophisticated e-commerce platform for a premium New York perfume brand. Features an immersive shopping experience with sleek design, responsive product galleries, and seamless checkout process for luxury fragrances.",
-      technologies: ["React", "Commerce.js", "Stripe", "Styled Components", "Framer Motion", "Contentful CMS"],
-      features: [
-        "Immersive perfume product galleries",
-        "Seamless checkout experience",
-        "Animation-rich user interface",
-        "Responsive design for all devices",
-        "Integration with headless CMS",
-        "Advanced filtering and search functionality"
+      description: "Luxury fragrance house inspired by the Greek word 'Eunoia'-beautiful thinking. Discover your signature scent through elegant, AI-powered experiences.",
+      longDescription: "Eunoia is a luxury fragrance brand rooted in the belief that scent is a quiet storyteller. Each perfume is crafted with grace and intention, designed to be elegant yet effortless, and to become your signature. The immersive shopping experience features bestsellers like Amber Sunset, Citrus Bloom, and Deep Musk, and includes an AI-powered quiz to help you find the scent that reflects your personality. The upcoming Pen Perfume introduces a new ritual-portable, refillable, and personalized by AI.",
+      technologies: [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "Hydrogen"
       ],
-      impact: "Elevating online shopping experience for perfume enthusiasts with intuitive design and smooth interactions",
-      image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&h=300&fit=crop",
+      features: [
+        "Signature scents: Amber Sunset, Citrus Bloom, Deep Musk",
+        "AI-powered scent quiz for personalized recommendations",
+        "Elegant, minimal design and immersive shopping experience",
+        "Pen Perfume: portable, refillable, and crafted by AI (coming soon)",
+        "Story-driven product pages and brand narrative"
+      ],
+      impact: "Elevates online perfume shopping by blending technology and artistry, helping users discover and wear their unique signature scent.",
+      image: "/Eunoia_Thumbnail.png",
       demoUrl: "http://eunoianyc.com/",
       githubUrl: "#"
     }
@@ -162,7 +167,13 @@ const Projects = () => {
   const topProjects = projects.filter(project => project.priority === 1);
 
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+    <motion.section
+      id="projects"
+      className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
@@ -200,9 +211,7 @@ const Projects = () => {
             return (
               <div
                 key={index}
-                className={`bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${
-                  isTopProject ? 'border-t-4 border-teal-500' : ''
-                }`}
+                className={`bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col h-full`}
               >
                 {/* Project Image with Gradient Overlay */}
                 <div className="relative h-48 overflow-hidden">
@@ -231,7 +240,7 @@ const Projects = () => {
                 </div>
 
                 {/* Project Content */}
-                <div className="p-4 sm:p-6">
+                <div className="p-4 sm:p-6 flex flex-col flex-1">
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3">
                     {project.title}
                   </h3>
@@ -242,7 +251,7 @@ const Projects = () => {
                   {/* Technologies */}
                   <div className="mb-3 sm:mb-4">
                     <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                      {project.technologies.slice(0, 6).map((tech, techIndex) => (
+                      {project.technologies.map((tech, techIndex) => (
                         <span
                           key={techIndex}
                           className="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded-full"
@@ -250,11 +259,6 @@ const Projects = () => {
                           {tech}
                         </span>
                       ))}
-                      {project.technologies.length > 6 && (
-                        <span className="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded-full">
-                          +{project.technologies.length - 6} more
-                        </span>
-                      )}
                     </div>
                   </div>
 
@@ -265,8 +269,11 @@ const Projects = () => {
                     </p>
                   </div>
 
+                  {/* Spacer to push buttons to bottom */}
+                  <div className="flex-1"></div>
+
                   {/* Action Buttons */}
-                  <div className="flex items-center gap-3 h-10">
+                  <div className="flex items-center gap-3 h-10 mt-2">
                     {project.demoUrl === "not-available" ? (
                       <button 
                         onClick={() => setSelectedProject(project)}
@@ -298,29 +305,6 @@ const Projects = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* Project Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-12 sm:mt-16">
-          {[
-            { number: "7+", label: "Projects Completed", icon: "🚀" },
-            { number: "3", label: "AI Integrations", icon: "🤖" },
-            { number: "2", label: "Open Source", icon: "💻" },
-            { number: "100%", label: "Client Satisfaction", icon: "⭐" }
-          ].map((stat, index) => (
-            <div
-              key={index}
-              className="text-center bg-white dark:bg-gray-900 p-4 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
-            >
-              <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">{stat.icon}</div>
-              <div className="text-2xl font-bold text-teal-600 dark:text-teal-400 mb-1">
-                {stat.number}
-              </div>
-              <div className="text-gray-600 dark:text-gray-400 text-sm">
-                {stat.label}
-              </div>
-            </div>
-          ))}
         </div>
 
         {/* Project Details Modal */}
@@ -453,7 +437,7 @@ const Projects = () => {
           </div>
         )}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

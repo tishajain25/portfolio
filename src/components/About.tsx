@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 
 const About = () => {
   const education = [
@@ -25,7 +26,13 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <motion.section
+      id="about"
+      className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
@@ -36,42 +43,54 @@ const About = () => {
 
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Personal Bio */}
-          <div className="space-y-4 sm:space-y-6">
-  <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">
-    My Journey
-  </h3>
-  <div className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed space-y-3 sm:space-y-4">
-    <p>
-      My journey in technology began with 
-      <span className="font-semibold text-teal-600 dark:text-teal-400"> curiosity</span> and a desire 
-      to understand how things work beneath the surface. That curiosity soon grew into a passion 
-      for creating solutions that are not only intelligent but also 
-      <span className="font-semibold text-teal-600 dark:text-teal-400"> accessible</span> and meaningful.
-    </p>
-    <p>
-      As a 
-      <span className="font-semibold text-teal-600 dark:text-teal-400"> Computer Science & Engineering </span> 
-      graduate from the 
-      <span className="font-semibold text-teal-600 dark:text-teal-400"> University of Petroleum and Energy Studies (UPES) </span> 
-      with a 
-      <span className="font-semibold text-teal-600 dark:text-teal-400"> 9.1</span> CGPA, and a certified professional in 
-      <span className="font-semibold text-teal-600 dark:text-teal-400"> AWS Solutions Architecture</span> and 
-      <span className="font-semibold text-teal-600 dark:text-teal-400"> Azure AI</span>, I’ve continually challenged myself 
-      to explore new domains-ranging from cloud technologies and AI to full-stack web development.
-    </p>
-    <p>
-      Beyond coding, I express myself through 
-      <span className="font-semibold text-teal-600 dark:text-teal-400"> public speaking</span> and 
-      <span className="font-semibold text-teal-600 dark:text-teal-400"> writing</span>, which fuel 
-      my creativity and help me connect with people. I believe that technology reaches its true potential when it is 
-      human-centered, and my journey is guided by the vision of building solutions that are inclusive, impactful, and transformative.
-    </p>
-  </div>
-</div>
+          <motion.div
+            className="space-y-4 sm:space-y-6"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+          >
+            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">
+              My Journey
+            </h3>
+            <div className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed space-y-3 sm:space-y-4">
+              <p>
+                My journey in technology began with 
+                <span className="font-semibold text-teal-600 dark:text-teal-400"> curiosity</span> and a desire 
+                to understand how things work beneath the surface. That curiosity soon grew into a passion 
+                for creating solutions that are not only intelligent but also 
+                <span className="font-semibold text-teal-600 dark:text-teal-400"> accessible</span> and meaningful.
+              </p>
+              <p>
+                As a 
+                <span className="font-semibold text-teal-600 dark:text-teal-400"> Computer Science & Engineering </span> 
+                graduate from the 
+                <span className="font-semibold text-teal-600 dark:text-teal-400"> University of Petroleum and Energy Studies (UPES) </span> 
+                with a 
+                <span className="font-semibold text-teal-600 dark:text-teal-400"> 9.1</span> CGPA, and a certified professional in 
+                <span className="font-semibold text-teal-600 dark:text-teal-400"> AWS Solutions Architecture</span> and 
+                <span className="font-semibold text-teal-600 dark:text-teal-400"> Azure AI</span>, I’ve continually challenged myself 
+                to explore new domains-ranging from cloud technologies and AI to full-stack web development.
+              </p>
+              <p>
+                Beyond coding, I express myself through 
+                <span className="font-semibold text-teal-600 dark:text-teal-400"> public speaking</span> and 
+                <span className="font-semibold text-teal-600 dark:text-teal-400"> writing</span>, which fuel 
+                my creativity and help me connect with people. I believe that technology reaches its true potential when it is 
+                human-centered, and my journey is guided by the vision of building solutions that are inclusive, impactful, and transformative.
+              </p>
+            </div>
+          </motion.div>
 
 
           {/* Education Timeline */}
-          <div className="space-y-6 sm:space-y-8">
+          <motion.div
+            className="space-y-6 sm:space-y-8"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+          >
             <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6">
               Education
             </h3>
@@ -121,10 +140,10 @@ const About = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

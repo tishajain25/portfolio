@@ -95,7 +95,7 @@ const Hero = () => {
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-teal-600 dark:text-teal-400">2</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Internships</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Certifications</div>
               </div>
             </div>
           </div>

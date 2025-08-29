@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const Skills = () => {
   const skillCategories = {
     'Frontend': [
@@ -76,14 +78,20 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+    <motion.section
+      id="skills"
+      className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Technical Skills
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-blue-500 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-teal-600 mx-auto mb-8"></div>
           <p className="text-base text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             Technologies and tools I use to build amazing digital experiences
           </p>
@@ -369,7 +377,7 @@ const Skills = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
