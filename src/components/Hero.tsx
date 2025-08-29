@@ -3,40 +3,11 @@ import { useEffect, useState } from 'react';
 
 const Hero = () => {
   const titles = [
-    'Frontend Developer',
-    'AI Developer',
-    'AWS Certified Solutions Architect',
+    'Frontend & AI Developer @TechCurators',
+    'Former Intern @IIT Patna',
+    'Former Intern @IBM',
     'Technical Content Writer',
   ];
-
-  const [displayText, setDisplayText] = useState('');
-  const [titleIndex, setTitleIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const currentTitle = titles[titleIndex];
-    let typeSpeed = isDeleting ? 50 : 100;
-
-    const typingEffect = setTimeout(() => {
-      if (!isDeleting) {
-        setDisplayText(currentTitle.substring(0, charIndex + 1));
-        setCharIndex((prev) => prev + 1);
-        if (charIndex + 1 === currentTitle.length) {
-          setTimeout(() => setIsDeleting(true), 1200); // pause after typing full word
-        }
-      } else {
-        setDisplayText(currentTitle.substring(0, charIndex - 1));
-        setCharIndex((prev) => prev - 1);
-        if (charIndex === 0) {
-          setIsDeleting(false);
-          setTitleIndex((prev) => (prev + 1) % titles.length);
-        }
-      }
-    }, typeSpeed);
-
-    return () => clearTimeout(typingEffect);
-  }, [charIndex, isDeleting, titleIndex, titles]);
 
   const scrollTo = (id: string) => {
     document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -55,9 +26,13 @@ const Hero = () => {
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight">
                 Tisha Jain
               </h1>
-              <div className="text-xl sm:text-2xl text-teal-600 dark:text-teal-400 font-medium min-h-[3rem]">
-                {displayText}
-                <span className="animate-pulse">|</span>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-x-2 gap-y-1 text-sm sm:text-base text-teal-700 dark:text-teal-300 font-medium tracking-wide min-h-[2rem]">
+                {titles.map((title, idx) => (
+                  <span key={title} className="">
+                    {title}
+                    {idx < titles.length - 1 && <span className="mx-2 text-gray-400 dark:text-gray-500">|</span>}
+                  </span>
+                ))}
               </div>
             </div>
 
