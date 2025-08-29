@@ -94,8 +94,8 @@ const Hero = () => {
                 <div className="text-sm text-gray-600 dark:text-gray-400">Projects</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-teal-600 dark:text-teal-400">2</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Certifications</div>
+                <div className="text-3xl font-bold text-teal-600 dark:text-teal-400">1+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Experience</div>
               </div>
             </div>
           </div>
