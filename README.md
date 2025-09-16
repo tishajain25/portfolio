@@ -1,73 +1,145 @@
-# Welcome to your Lovable project
+# Tisha Jain Portfolio
 
-## Project info
+A modern, responsive portfolio website showcasing my work as a Frontend Developer, AI Developer, and AWS Certified Solutions Architect.
 
-**URL**: https://lovable.dev/projects/9fc0e804-9575-4a77-8a90-ed0c27eb353f
+🌐 **Live Demo**: 
+- **Production**: [https://tishajain.dev/](https://tishajain.dev/)
+- **Development**: [https://tisha-jain-portfolio-hub-main-git-main-tishas-projects-379709c3.vercel.app/](https://tisha-jain-portfolio-hub-main-git-main-tishas-projects-379709c3.vercel.app/)
 
-## How can I edit this code?
+## 🚀 Features
 
-There are several ways of editing your application.
+- **Responsive Design**: Optimized for all devices and screen sizes
+- **Modern UI/UX**: Clean design with smooth animations using Framer Motion
+- **Dark Mode**: Toggle between light and dark themes
+- **Interactive Elements**: Animated components and hover effects
+- **Contact Form**: Functional contact form with EmailJS integration
+- **Project Showcase**: Featured projects with detailed descriptions and tech stacks
+- **Skills Section**: Comprehensive overview of technical skills and achievements
 
-**Use Lovable**
+## 🛠️ Technologies Used
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9fc0e804-9575-4a77-8a90-ed0c27eb353f) and start prompting.
+- **Frontend Framework**: React 18 with TypeScript
+- **Build Tool**: Vite for fast development and optimized builds
+- **Styling**: Tailwind CSS for utility-first styling
+- **UI Components**: shadcn/ui component library
+- **Animations**: Framer Motion for smooth animations
+- **Icons**: Lucide React for beautiful icons
+- **Email Service**: EmailJS for contact form functionality
+- **Deployment**: Ready for deployment on Vercel, Netlify, or any static hosting
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📋 Prerequisites
 
-**Use your preferred IDE**
+- Node.js (v16 or higher)
+- npm or yarn package manager
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🚀 Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. **Clone the repository**
+   ```bash
+   git clone <your-repository-url>
+   ```
 
-Follow these steps:
+2. **Navigate to project directory**
+   ```bash
+   cd tisha-jain-portfolio-hub-main
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+3. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+4. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   ```
+   Fill in your EmailJS credentials in the `.env` file.
 
-# Step 3: Install the necessary dependencies.
-npm i
+5. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+6. **Open your browser**
+   Navigate to `http://localhost:5173` to view the portfolio.
+
+## 📁 Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── ui/             # Reusable UI components
+│   ├── About.tsx       # About section
+│   ├── Contact.tsx     # Contact form and info
+│   ├── Experience.tsx  # Experience timeline
+│   ├── Footer.tsx      # Site footer
+│   ├── Header.tsx      # Navigation header
+│   ├── Hero.tsx        # Landing section
+│   ├── Projects.tsx    # Projects showcase
+│   ├── Services.tsx    # Services offered
+│   └── Skills.tsx      # Skills and achievements
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+├── pages/              # Page components
+└── styles/             # Global styles
 ```
 
-**Edit a file directly in GitHub**
+## 🎨 Customization
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Adding New Projects
+Edit the `projects` array in `src/components/Projects.tsx` to add or modify project information.
 
-**Use GitHub Codespaces**
+### Updating Skills
+Modify the skill categories in `src/components/Skills.tsx` to reflect your expertise.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Changing Colors
+Update the Tailwind CSS theme in `tailwind.config.ts` to customize the color scheme.
 
-## What technologies are used for this project?
+## 📧 Contact Form Setup
 
-This project is built with:
+1. Create an EmailJS account at [emailjs.com](https://www.emailjs.com/)
+2. Set up a service and email template
+3. Add your credentials to the `.env` file:
+   ```
+   VITE_EMAILJS_SERVICE_ID=your_service_id
+   VITE_EMAILJS_TEMPLATE_ID=your_template_id
+   VITE_EMAILJS_PUBLIC_KEY=your_public_key
+   ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🚀 Deployment
 
-## How can I deploy this project?
+### Build for Production
+```bash
+npm run build
+```
 
-Simply open [Lovable](https://lovable.dev/projects/9fc0e804-9575-4a77-8a90-ed0c27eb353f) and click on Share -> Publish.
+### Deploy to Vercel
+1. Connect your GitHub repository to Vercel
+2. Configure environment variables in Vercel dashboard
+3. Deploy automatically on every push to main branch
 
-## Can I connect a custom domain to my Lovable project?
+**Production URL**: [https://tishajain.dev/](https://tishajain.dev/)  
+**Development URL**: [https://tisha-jain-portfolio-hub-main-git-main-tishas-projects-379709c3.vercel.app/](https://tisha-jain-portfolio-hub-main-git-main-tishas-projects-379709c3.vercel.app/)
 
-Yes, you can!
+### Deploy to Netlify
+1. Build the project locally
+2. Drag and drop the `dist` folder to Netlify
+3. Or connect your repository for automatic deployments
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📄 License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+This is a private portfolio repository. If you'd like to suggest improvements or report issues, please reach out directly.
+
+## 📞 Contact
+
+Tisha Jain - [Email](mailto:your.email@example.com)
+
+Portfolio Repository: Private
+
+---
+
+⭐ Don't forget to star this repository if you found it helpful!
