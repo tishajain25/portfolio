@@ -15,7 +15,7 @@ const Footer = () => {
   const socialLinks = [
     {
       name: 'LinkedIn',
-      href: 'https://linkedin.com/in/tisha-jain-a06323233'
+      href: 'https://linkedin.com/in/tisha-jain25'
     },
     {
       name: 'GitHub',

@@ -15,8 +15,8 @@ import { useState } from 'reac  const contactInfo = [
     {
       icon: "💼",
       title: "LinkedIn",
-      value: "tisha-jain-a06323233",
-      link: "https://linkedin.com/in/tisha-jain-a06323233"
+      value: "tisha-jain25",
+      link: "https://linkedin.com/in/tisha-jain25"
     }= () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -61,8 +61,8 @@ import { useState } from 'reac  const contactInfo = [
     {
       icon: "💼",
       title: "LinkedIn",
-      value: "tisha-jain-a06323233",
-      link: "https://linkedin.com/in/tisha-jain-a06323233"
+      value: "tisha-jain25",
+      link: "https://linkedin.com/in/tisha-jain25"
     }
   ];
 
@@ -234,7 +234,7 @@ import { useState } from 'reac  const contactInfo = [
                 View My GitHub
               </a>
               <a
-                href="https://linkedin.com/in/tisha-jain-a06323233"
+                href="https://linkedin.com/in/tisha-jain25"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300"

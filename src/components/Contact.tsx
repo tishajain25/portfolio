@@ -114,8 +114,8 @@ const Contact = () => {
     {
       icon: "💼",
       title: "LinkedIn",
-      value: "tisha-jain-a06323233",
-      link: "https://linkedin.com/in/tisha-jain-a06323233"
+      value: "tisha-jain25",
+      link: "https://linkedin.com/in/tisha-jain25"
     }
   ];
 
