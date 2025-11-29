@@ -1,6 +1,6 @@
 # Tisha Jain Portfolio
 
-A modern, responsive portfolio website showcasing my work as a Frontend Developer, AI Developer, and AWS Certified Solutions Architect.
+A modern, responsive portfolio website showcasing my work as a Full Stack AI Developer and AWS Certified Solutions Architect.
 
 🌐 **Live Demo**: 
 - **Production**: [https://tishajain.dev/](https://tishajain.dev/)
@@ -36,7 +36,7 @@ A modern, responsive portfolio website showcasing my work as a Frontend Develope
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repository-url>
+   git clone https://github.com/tishajain25/portfolio.git
    ```
 
 2. **Navigate to project directory**
@@ -118,8 +118,7 @@ npm run build
 2. Configure environment variables in Vercel dashboard
 3. Deploy automatically on every push to main branch
 
-**Production URL**: [https://tishajain.dev/](https://tishajain.dev/)  
-**Development URL**: [https://tisha-jain-portfolio-hub-main-git-main-tishas-projects-379709c3.vercel.app/](https://tisha-jain-portfolio-hub-main-git-main-tishas-projects-379709c3.vercel.app/)
+**Production URL**: [https://tishajain.dev/](https://tishajain.dev/)
 
 ### Deploy to Netlify
 1. Build the project locally
@@ -132,13 +131,15 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🤝 Contributing
 
-This is a private portfolio repository. If you'd like to suggest improvements or report issues, please reach out directly.
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/tishajain25/portfolio/issues).
 
 ## 📞 Contact
 
 Tisha Jain - [Email](mailto:jaintisha2530@gmail.com)
 
-Portfolio Repository: Private
+Portfolio: [https://tishajain.dev](https://tishajain.dev)
+
+GitHub: [https://github.com/tishajain25/portfolio](https://github.com/tishajain25/portfolio)
 
 ---
 
