@@ -41,7 +41,7 @@ A modern, responsive portfolio website showcasing my work as a Frontend Develope
 
 2. **Navigate to project directory**
    ```bash
-   cd tisha-jain-portfolio-hub-main
+   cd portfolio
    ```
 
 3. **Install dependencies**
