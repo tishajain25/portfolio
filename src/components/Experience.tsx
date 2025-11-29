@@ -2,33 +2,33 @@
 const Experience = () => {
   const experiences = [
     {
-      title: "Frontend & AI Developer",
+      title: "Full Stack AI Developer",
       company: "TechCurators, a TC Group Company",
       period: "Dec 2024 - Present",
       location: "New Delhi",
       status: "current",
-      description: "Developing responsive web interfaces and integrating AI capabilities into client projects and internal platforms.",
-      technologies: ["Next.js", "JavaScript", "Tailwind CSS", "Figma", "ChatGPT-4o", "Relevance AI"],
+      description: "Building production-ready web applications and integrating agentic AI workflows into client projects and internal platforms. Architecting scalable solutions that combine modern frontend technologies with intelligent automation.",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Figma", "ChatGPT-4o", "Relevance AI", "Node.js"],
       achievements: [
-        "Led frontend development of TOSS, an AI-driven SEO and branding platform",
-        "Integrated dynamic UI components based on five natural elements",
-        "Implemented AI capabilities using ChatGPT-4o and Relevance AI",
-        "Created automated Lighthouse report analysis and data extraction agents"
+        "Led frontend development of TOSS, an AI-driven SEO and branding platform with dynamic element-based UI components",
+        "Built agentic AI workflows integrating ChatGPT-4o, Relevance AI, and custom APIs for automated audits and content generation",
+        "Designed scalable backend APIs and integrated multiple services for real-time AI inference and prompt orchestration",
+        "Developed dashboard analytics and monitoring tools to track platform performance and user engagement"
       ]
     },
     {
       title: "Web & App Developer Intern",
       company: "Indian Institute of Technology (IIT) Patna",
       period: "Jun - Aug 2024",
-      location: "Patna, India",
+      location: "IIT Patna",
       status: "completed",
-      description: "Developed and maintained responsive websites and mobile applications, ensuring cross-platform functionality and enhanced user experience.",
+      description: "Developed and maintained responsive websites and mobile applications for institutional needs, ensuring cross-platform functionality and enhanced user experience in an academic research environment.",
       technologies: ["ReactJS", "HTML/CSS", "JavaScript", "Bootstrap", "Flutter", "Git"],
       achievements: [
-        "Developed and maintained responsive websites for institutional needs",
-        "Built cross-platform mobile applications with Flutter",
-        "Collaborated with cross-functional teams on design and feature implementation",
-        "Applied agile development methodologies in an academic research environment"
+        "Developed and maintained responsive websites for institutional requirements",
+        "Built cross-platform mobile applications ensuring seamless functionality across devices",
+        "Collaborated with cross-functional teams to design features and enhance user experience",
+        "Applied agile development methodologies in high-quality project delivery"
       ]
     }
   ];

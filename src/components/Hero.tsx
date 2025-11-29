@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 
 const Hero = () => {
   const titles = [
-    'Frontend & AI Developer @TechCurators',
+    'Full Stack AI Developer @TechCurators',
     'Former Intern @IIT Patna',
-    'Former Intern @IBM',
+    'AWS Certified Solutions Architect',
     'Technical Content Writer',
   ];
 
@@ -37,7 +37,7 @@ const Hero = () => {
             </div>
 
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl leading-relaxed">
-              Computer Science Engineer and AWS Certified Solutions Architect with expertise in AI integration and responsive web development. Combining technical excellence with creative problem-solving to build accessible, innovative solutions that bridge technology gaps and enhance user experiences.
+              Computer Science Engineer specializing in full-stack development and AI integration. AWS Certified Solutions Architect with hands-on experience building production-ready web applications, agentic AI workflows, and scalable backend systems. Passionate about creating innovative solutions that bridge cutting-edge technology with real-world impact.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
