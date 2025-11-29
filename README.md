@@ -136,7 +136,7 @@ This is a private portfolio repository. If you'd like to suggest improvements or
 
 ## 📞 Contact
 
-Tisha Jain - [Email](mailto:your.email@example.com)
+Tisha Jain - [Email](mailto:jaintisha2530@gmail.com)
 
 Portfolio Repository: Private
 
