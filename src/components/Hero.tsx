@@ -69,7 +69,7 @@ const Hero = () => {
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-teal-600 dark:text-teal-400">1+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Experience</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Years of Experience</div>
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@ const Hero = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              
+
               {/* Decorative elements */}
               <div className="absolute -top-6 -right-6 w-12 h-12 bg-teal-400/30 rounded-full blur-md"></div>
               <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-blue-400/30 rounded-full blur-md"></div>
