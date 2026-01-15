@@ -38,7 +38,7 @@ const Skills = () => {
     ]
   };
 
-    const achievements = [
+  const achievements = [
     {
       title: "AWS Certified Solutions Architect",
       organization: "Amazon Web Services",
@@ -47,6 +47,15 @@ const Skills = () => {
       gradientClass: "from-yellow-500 to-orange-600",
       hoverBg: "hover:bg-yellow-50 dark:hover:bg-yellow-900/10",
       year: "2025"
+    },
+    {
+      title: "Research Intern",
+      organization: "IIT Patna",
+      type: "Research Experience",
+      icon: "🔬",
+      gradientClass: "from-orange-500 to-orange-600",
+      hoverBg: "hover:bg-orange-50 dark:hover:bg-orange-900/10",
+      year: "2024"
     },
     {
       title: "Microsoft Azure AI Fundamentals",
@@ -65,15 +74,6 @@ const Skills = () => {
       gradientClass: "from-green-500 to-green-600",
       hoverBg: "hover:bg-green-50 dark:hover:bg-green-900/10",
       year: "2023"
-    },
-    {
-      title: "Research Intern",
-      organization: "IIT Patna",
-      type: "Research Experience",
-      icon: "🔬",
-      gradientClass: "from-orange-500 to-orange-600",
-      hoverBg: "hover:bg-orange-50 dark:hover:bg-orange-900/10",
-      year: "2024"
     }
   ];
 
@@ -103,7 +103,7 @@ const Skills = () => {
           <div className="space-y-12 md:space-y-16 relative">
             {/* Decorative element */}
             <div className="absolute -left-4 top-10 h-full w-1 bg-gradient-to-b from-teal-500/30 to-blue-500/20 rounded-full hidden md:block"></div>
-            
+
             {/* Frontend Section */}
             <div className="relative">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
@@ -122,9 +122,9 @@ const Skills = () => {
                     className="group flex items-center gap-2 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-300"
                   >
                     <div className="flex items-center justify-center">
-                      <img 
-                        src={tech.logo} 
-                        alt={tech.name} 
+                      <img
+                        src={tech.logo}
+                        alt={tech.name}
                         className="w-5 h-5 object-contain"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
@@ -144,7 +144,7 @@ const Skills = () => {
                 ))}
               </div>
             </div>
-            
+
             {/* Backend Section */}
             <div className="relative">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
@@ -163,9 +163,9 @@ const Skills = () => {
                     className="group flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300"
                   >
                     <div className="flex items-center justify-center">
-                      <img 
-                        src={tech.logo} 
-                        alt={tech.name} 
+                      <img
+                        src={tech.logo}
+                        alt={tech.name}
                         className="w-5 h-5 object-contain"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
@@ -185,7 +185,7 @@ const Skills = () => {
                 ))}
               </div>
             </div>
-            
+
             {/* Database Section */}
             <div className="relative">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
@@ -204,9 +204,9 @@ const Skills = () => {
                     className="group flex items-center gap-2 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-300"
                   >
                     <div className="flex items-center justify-center">
-                      <img 
-                        src={tech.logo} 
-                        alt={tech.name} 
+                      <img
+                        src={tech.logo}
+                        alt={tech.name}
                         className="w-5 h-5 object-contain"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
@@ -227,12 +227,12 @@ const Skills = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Right Column */}
           <div className="space-y-16 relative">
             {/* Decorative element */}
             <div className="absolute -left-4 top-10 h-full w-1 bg-gradient-to-b from-blue-500/30 to-purple-500/20 rounded-full hidden md:block"></div>
-            
+
             {/* DevOps & Cloud Section */}
             <div className="relative">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
@@ -251,9 +251,9 @@ const Skills = () => {
                     className="group flex items-center gap-2 hover:text-orange-600 dark:hover:text-orange-400 transition-all duration-300"
                   >
                     <div className="flex items-center justify-center">
-                      <img 
-                        src={tech.logo} 
-                        alt={tech.name} 
+                      <img
+                        src={tech.logo}
+                        alt={tech.name}
                         className="w-5 h-5 object-contain"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
@@ -273,7 +273,7 @@ const Skills = () => {
                 ))}
               </div>
             </div>
-            
+
             {/* AI & Others Section */}
             <div className="relative">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
@@ -292,9 +292,9 @@ const Skills = () => {
                     className="group flex items-center gap-2 hover:text-pink-600 dark:hover:text-pink-400 transition-all duration-300"
                   >
                     <div className="flex items-center justify-center">
-                      <img 
-                        src={tech.logo} 
-                        alt={tech.name} 
+                      <img
+                        src={tech.logo}
+                        alt={tech.name}
                         className="w-5 h-5 object-contain"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
@@ -326,7 +326,7 @@ const Skills = () => {
           <div className="absolute top-0 right-1/4 transform -translate-y-1/2">
             <div className="h-1 w-20 bg-gradient-to-l from-blue-500 to-transparent rounded-full"></div>
           </div>
-          
+
           <div className="text-center mb-10">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
               Achievements & Experience
@@ -335,7 +335,7 @@ const Skills = () => {
               Professional milestones and recognitions that showcase my expertise
             </p>
           </div>
-          
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {achievements.map((achievement, index) => (
               <div
@@ -344,7 +344,7 @@ const Skills = () => {
               >
                 {/* Background Decoration */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${achievement.gradientClass} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-                
+
                 {/* Content */}
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-4">
@@ -355,15 +355,15 @@ const Skills = () => {
                       {achievement.year}
                     </span>
                   </div>
-                  
+
                   <h4 className="font-bold text-gray-900 dark:text-white text-sm mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors duration-300 leading-tight">
                     {achievement.title}
                   </h4>
-                  
+
                   <p className="text-xs text-gray-600 dark:text-gray-400 mb-3">
                     {achievement.organization}
                   </p>
-                  
+
                   <div className="inline-flex items-center gap-1 px-3 py-1 bg-teal-50 dark:bg-teal-900/20 text-teal-600 dark:text-teal-400 text-xs rounded-full font-medium">
                     {achievement.type}
                   </div>
