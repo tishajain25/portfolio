@@ -1,102 +1,157 @@
-
 import { useState, useEffect } from 'react';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
+/**
+ * Header - Fixed Navigation Bar with Active Section Tracking
+ */
 const Header = () => {
-  const [isDark, setIsDark] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    const saved = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const shouldUseDark = saved === 'dark' || (!saved && prefersDark);
-    
-    setIsDark(shouldUseDark);
-    document.documentElement.classList.toggle('dark', shouldUseDark);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme = !isDark;
-    setIsDark(newTheme);
-    localStorage.setItem('theme', newTheme ? 'dark' : 'light');
-    document.documentElement.classList.toggle('dark', newTheme);
-  };
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-80px 0px -70% 0px', // Detect as soon as it nears the header
+      threshold: 0
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Ordered list of section IDs as they appear on the page
+    const sections = ['home', 'about', 'experience', 'skills', 'projects', 'contact'];
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: '#home', id: 'home' },
+    { name: 'About', href: '#about', id: 'about' },
+    { name: 'Experience', href: '#experience', id: 'experience' },
+    { name: 'Skills', href: '#skills', id: 'skills' },
+    { name: 'Projects', href: '#projects', id: 'projects' },
+    { name: 'Contact', href: '#contact', id: 'contact' }
   ];
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
     setIsMenuOpen(false);
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('#home'); }}>
-              {isDark ? (
-                <img src="/DarkBgLogo.png" alt="Tisha Jain Logo" className="h-8 w-fit" />
-              ) : (
-                <img src="/Logo-removebg.png" alt="Tisha Jain Logo" className="h-8 w-fit" />
-              )}
-            </a>
-          </div>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+      ? 'py-4 bg-gray-950/90 backdrop-blur-xl border-b border-white/5'
+      : 'py-6 bg-transparent'
+      }`}>
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex justify-between items-center">
+          {/* Logo */}
+          <a
+            href="#home"
+            onClick={(e) => { e.preventDefault(); scrollToSection('#home'); }}
+            className="transition-transform hover:scale-105"
+          >
+            <img
+              src="/DarkBgLogo.png"
+              alt="Tisha Jain Logo"
+              className="h-9 w-auto"
+            />
+          </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center gap-10">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-200 font-medium"
+                className={`text-[11px] font-black uppercase tracking-[0.2em] transition-all relative py-2 ${activeSection === item.id
+                  ? 'text-teal-400 opacity-100'
+                  : 'text-gray-400 hover:text-white opacity-60 hover:opacity-100'
+                  }`}
               >
                 {item.name}
+                {/* Active Indicator Underline */}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-teal-500 transition-all duration-300 rounded-full ${activeSection === item.id ? 'w-full' : 'w-0'
+                  }`} />
               </button>
             ))}
           </nav>
 
-          <div className="flex items-center space-x-4">
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300"
-              aria-label="Toggle theme"
+          {/* CTA Button */}
+          <div className="hidden md:block">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2.5 bg-teal-500 hover:bg-teal-400 text-gray-950 text-xs font-black uppercase tracking-widest rounded-xl transition-all hover:shadow-[0_0_20px_rgba(45,212,191,0.3)] hover:-translate-y-0.5"
             >
-              {isDark ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-
-            {/* Mobile Menu Toggle */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
-            >
-              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
+              Resume
+            </a>
           </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 text-white"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-lg">
-            <nav className="px-4 py-2 space-y-1">
+          <div className="md:hidden absolute top-[72px] left-0 right-0 bg-gray-950/95 backdrop-blur-xl border-b border-white/5 animate-in fade-in slide-in-from-top-4 duration-300">
+            <nav className="px-8 py-10 space-y-6">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left py-2.5 px-2 text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md transition-colors duration-200 font-medium text-sm"
+                  className={`block w-full text-left text-sm font-black uppercase tracking-[0.2em] transition-colors ${activeSection === item.id
+                    ? 'text-teal-400'
+                    : 'text-gray-400 hover:text-white'
+                    }`}
                 >
-                  {item.name === 'Experience' ? 'Prof. Experience' : item.name}
+                  {item.name}
                 </button>
               ))}
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center py-4 bg-teal-500 text-gray-950 font-black uppercase tracking-widest text-xs rounded-2xl shadow-xl"
+              >
+                View Resume
+              </a>
             </nav>
           </div>
         )}

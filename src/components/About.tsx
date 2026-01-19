@@ -1,149 +1,110 @@
 import { motion } from 'framer-motion';
 
+/**
+ * About/Education Section - Polished and Direct
+ */
 const About = () => {
   const education = [
     {
       degree: "B.Tech Computer Science & Engineering",
       institution: "University of Petroleum and Energy Studies",
-      period: "2021-2025",
-      score: "CGPA: 9.1/10.0",
-      status: "completed"
+      period: "2021 - 2025",
+      score: "CGPA: 9.1"
     },
     {
       degree: "Class XII CBSE",
       institution: "Higher Secondary Education",
       period: "2021",
-      score: "96%",
-      status: "completed"
+      score: "96%"
     },
     {
       degree: "Class X CBSE",
       institution: "Secondary Education",
       period: "2019",
-      score: "94.6%",
-      status: "completed"
+      score: "94.6%"
     }
   ];
 
   return (
-    <motion.section
-      id="about"
-      className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300"
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            About Me
-          </h2>
-          <div className="w-24 h-1 bg-teal-600 mx-auto mb-8"></div>
-        </div>
+    <section id="about" className="py-24 bg-gray-900 relative overflow-hidden">
+      {/* Ambient Background Accent */}
+      <div className="absolute top-1/2 -right-40 w-[500px] h-[500px] bg-teal-500/[0.03] blur-[120px] rounded-full pointer-events-none" />
 
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-          {/* Personal Bio */}
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        {/* Section Header */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">
+            About <span className="text-teal-400">Me</span>
+          </h2>
+          <div className="w-20 h-1 bg-teal-500 mx-auto rounded-full" />
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Story */}
           <motion.div
-            className="space-y-4 sm:space-y-6"
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
+            transition={{ delay: 0.1 }}
           >
-            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">
-              My Journey
-            </h3>
-            <div className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed space-y-3 sm:space-y-4">
-              <p>
-                My journey in technology began with 
-                <span className="font-semibold text-teal-600 dark:text-teal-400"> curiosity</span> and a desire 
-                to understand how things work beneath the surface. That curiosity soon grew into a passion 
-                for creating solutions that are not only intelligent but also 
-                <span className="font-semibold text-teal-600 dark:text-teal-400"> accessible</span> and meaningful.
-              </p>
-              <p>
-                As a 
-                <span className="font-semibold text-teal-600 dark:text-teal-400"> Computer Science & Engineering </span> 
-                graduate from the 
-                <span className="font-semibold text-teal-600 dark:text-teal-400"> University of Petroleum and Energy Studies (UPES) </span> 
-                with a 
-                <span className="font-semibold text-teal-600 dark:text-teal-400"> 9.1</span> CGPA, and a certified professional in 
-                <span className="font-semibold text-teal-600 dark:text-teal-400"> AWS Solutions Architecture</span> and 
-                <span className="font-semibold text-teal-600 dark:text-teal-400"> Azure AI</span>, I’ve continually challenged myself 
-                to explore new domains-ranging from cloud technologies and AI to full-stack web development.
-              </p>
-              <p>
-                Beyond coding, I express myself through 
-                <span className="font-semibold text-teal-600 dark:text-teal-400"> public speaking</span> and 
-                <span className="font-semibold text-teal-600 dark:text-teal-400"> writing</span>, which fuel 
-                my creativity and help me connect with people. I believe that technology reaches its true potential when it is 
-                human-centered, and my journey is guided by the vision of building solutions that are inclusive, impactful, and transformative.
-              </p>
+            <div className="bg-gray-800/50 border border-gray-700/50 rounded-3xl p-8 h-full">
+              <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                <div className="w-1.5 h-8 bg-teal-500 rounded-full" />
+                My Story
+              </h3>
+              <div className="space-y-6 text-gray-300 leading-relaxed text-base sm:text-lg">
+                <p>
+                  I am a <span className="text-teal-400 font-semibold">Computer Science Engineer</span> who enjoys the process of building clean, functional software. I like taking complex problems and breaking them down into <span className="text-teal-400 font-semibold">scalable solutions</span> that actually work in the real world.
+                </p>
+                <p>
+                  Beyond coding, I have a strong interest in <span className="text-teal-400 font-semibold">technical writing and public speaking</span>. I find that exploring these avenues helps me sharpen my own understanding and stay connected with new ideas in the tech space.
+                </p>
+                <p>
+                  Being <span className="text-teal-400 font-semibold">AWS Certified</span> gives me a solid foundation to look beyond just the frontend—ensuring that the systems I build are structured for efficiency, security, and future growth.
+                </p>
+                <p className="text-gray-400 italic border-l-2 border-teal-500/30 pl-4 mt-8 text-sm sm:text-base">
+                  "I believe technology is most effective when it is built with purpose, simplicity, and a long-term vision."
+                </p>
+              </div>
             </div>
           </motion.div>
 
-
-          {/* Education Timeline */}
+          {/* Education */}
           <motion.div
-            className="space-y-6 sm:space-y-8"
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+            transition={{ delay: 0.2 }}
+            className="space-y-4"
           >
-            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6">
+            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+              <div className="w-1.5 h-8 bg-teal-500 rounded-full" />
               Education
             </h3>
-            <div className="relative">
-              {/* Timeline Line */}
-              <div className="absolute left-3 sm:left-4 top-0 bottom-0 w-0.5 bg-teal-600"></div>
-              
-              {education.map((edu, index) => (
-                <div key={index} className="relative flex items-start space-x-4 sm:space-x-6 pb-6 sm:pb-8">
-                  {/* Timeline Dot */}
-                  <div className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                    edu.status === 'current' 
-                      ? 'bg-teal-600 ring-2 sm:ring-4 ring-teal-200 dark:ring-teal-800' 
-                      : 'bg-gray-400 dark:bg-gray-600'
-                  }`}>
-                    <div className="w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full"></div>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className={`bg-gray-50 dark:bg-gray-800 p-4 sm:p-6 rounded-lg flex-1 shadow-sm ${
-                    edu.status === 'current' ? 'border-l-4 border-teal-600' : ''
-                  }`}>
-                    <div className="flex flex-col space-y-1 mb-2">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                        <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
-                          {edu.degree}
-                        </h4>
-                        <span className="text-xs sm:text-sm text-teal-600 dark:text-teal-400 font-medium mt-1 sm:mt-0">
-                          {edu.period}
-                        </span>
-                      </div>
-                      <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
-                        {edu.institution}
-                      </p>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-lg font-bold text-teal-600 dark:text-teal-400">
-                        {edu.score}
-                      </span>
-                      {edu.status === 'current' && (
-                        <span className="px-3 py-1 bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 text-xs font-medium rounded-full">
-                          Current
-                        </span>
-                      )}
-                    </div>
-                  </div>
+            {education.map((edu, i) => (
+              <div
+                key={i}
+                className="p-6 rounded-2xl border bg-gray-800/30 border-gray-700/30 hover:border-teal-500/30 transition-all group"
+              >
+                <div className="mb-2">
+                  <h4 className="text-lg font-bold text-white group-hover:text-teal-400 transition-colors tracking-tight">{edu.degree}</h4>
                 </div>
-              ))}
-            </div>
+                <p className="text-gray-400 text-sm mb-2">{edu.institution}</p>
+                <div className="flex justify-between items-center mt-4">
+                  <span className="text-xl font-black text-teal-400">{edu.score}</span>
+                  <span className="text-gray-500 text-sm font-medium">{edu.period}</span>
+                </div>
+              </div>
+            ))}
           </motion.div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
