@@ -176,7 +176,7 @@ const Contact = () => {
                                         name="name"
                                         required
                                         placeholder="Name"
-                                        className="w-full px-6 py-4 bg-gray-900/50 border border-gray-800 rounded-2xl text-white focus:border-teal-500/50 focus:outline-none transition-all placeholder:text-gray-600 font-medium"
+                                        className="w-full px-4 py-4 bg-gray-900/50 border border-gray-800 rounded-2xl text-white focus:border-teal-500/50 focus:outline-none transition-all placeholder:text-gray-600 font-medium text-sm"
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -198,7 +198,7 @@ const Contact = () => {
                                     required
                                     rows={5}
                                     placeholder="Tell me about your project or just say hi..."
-                                    className="w-full px-6 py-4 bg-gray-900/50 border border-gray-800 rounded-2xl text-white focus:border-teal-500/50 focus:outline-none resize-none transition-all placeholder:text-gray-600 font-medium"
+                                    className="w-full px-4 py-4 bg-gray-900/50 border border-gray-800 rounded-2xl text-white focus:border-teal-500/50 focus:outline-none resize-none transition-all placeholder:text-gray-600 font-medium text-sm"
                                 />
                             </div>
 
