@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
-import { Mail, Send, Linkedin, Github, MessageSquare } from 'lucide-react';
+import { Mail, Send, Linkedin, Github } from 'lucide-react';
 import { useToast } from "@/components/ui/use-toast";
 
 /**
@@ -16,16 +17,44 @@ const Contact = () => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate form submission delay
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        try {
+            // EmailJS configuration from environment variables
+            const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+            const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+            const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-        toast({
-            title: "Message Sent! 🚀",
-            description: "Thanks for reaching out, Tisha will get back to you soon.",
-        });
+            // Validate that environment variables are present
+            if (!serviceId || !templateId || !publicKey) {
+                console.error('Missing EmailJS environment variables');
+                throw new Error('Email service configuration error');
+            }
 
-        setIsSubmitting(false);
-        formRef.current?.reset();
+            // Initialize EmailJS with your public key
+            emailjs.init(publicKey);
+
+            // Send the email
+            await emailjs.sendForm(
+                serviceId,
+                templateId,
+                formRef.current as HTMLFormElement
+            );
+
+            toast({
+                title: "Message Sent! 🚀",
+                description: "Thanks for reaching out, Tisha will get back to you soon.",
+            });
+
+            formRef.current?.reset();
+        } catch (error) {
+            console.error('EmailJS Error:', error);
+            toast({
+                title: "Failed to send message",
+                description: "Please try again or contact me directly via email.",
+                variant: "destructive",
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const socials = [
@@ -144,6 +173,7 @@ const Contact = () => {
                                     <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest ml-1">Full Name</label>
                                     <input
                                         type="text"
+                                        name="name"
                                         required
                                         placeholder="Name"
                                         className="w-full px-6 py-4 bg-gray-900/50 border border-gray-800 rounded-2xl text-white focus:border-teal-500/50 focus:outline-none transition-all placeholder:text-gray-600 font-medium"
@@ -153,9 +183,10 @@ const Contact = () => {
                                     <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest ml-1">Email Address</label>
                                     <input
                                         type="email"
+                                        name="email"
                                         required
                                         placeholder="email@example.com"
-                                        className="w-full px-6 py-4 bg-gray-900/50 border border-gray-800 rounded-2xl text-white focus:border-teal-500/50 focus:outline-none transition-all placeholder:text-gray-600 font-medium"
+                                        className="w-full px-4 py-4 bg-gray-900/50 border border-gray-800 rounded-2xl text-white focus:border-teal-500/50 focus:outline-none transition-all placeholder:text-gray-600 font-medium text-sm"
                                     />
                                 </div>
                             </div>
@@ -163,6 +194,7 @@ const Contact = () => {
                             <div className="space-y-2">
                                 <label className="text-[10px] font-black text-gray-500 uppercase tracking-widest ml-1">Your Message</label>
                                 <textarea
+                                    name="message"
                                     required
                                     rows={5}
                                     placeholder="Tell me about your project or just say hi..."
