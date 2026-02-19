@@ -110,7 +110,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <a
-              href="/resume.pdf"
+              href="/Tisha_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2.5 bg-teal-500 hover:bg-teal-400 text-gray-950 text-xs font-black uppercase tracking-widest rounded-xl transition-all hover:shadow-[0_0_20px_rgba(45,212,191,0.3)] hover:-translate-y-0.5"
@@ -145,7 +145,7 @@ const Header = () => {
                 </button>
               ))}
               <a
-                href="/resume.pdf"
+                href="/Tisha_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full text-center py-4 bg-teal-500 text-gray-950 font-black uppercase tracking-widest text-xs rounded-2xl shadow-xl"

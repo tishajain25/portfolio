@@ -86,17 +86,6 @@ const Projects = () => {
             image: "/SignBridge_Thumbnail.png",
             demoUrl: "",
             githubUrl: ""
-        },
-        {
-            title: "NexaTalk",
-            category: "Full-Stack",
-            description: "Secure, real-time encrypted messaging platform.",
-            longDescription: "A robust chat application featuring end-to-end encryption and persistent socket connections for secure real-time communication.",
-            technologies: ["Node.js", "MongoDB", "Socket.IO", "JWT"],
-            impact: "Providing private communication for decentralized teams.",
-            image: "/NexaTalk_Thumbnail.webp",
-            demoUrl: "",
-            githubUrl: ""
         }
     ];
 

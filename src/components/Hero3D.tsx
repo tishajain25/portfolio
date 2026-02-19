@@ -176,7 +176,7 @@ const Hero3D = () => {
                             {/* CTA Buttons */}
                             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
                                 <a
-                                    href="/resume.pdf"
+                                    href="/Tisha_Resume.pdf"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-gray-950 font-black rounded-2xl transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(45,212,191,0.4)] uppercase tracking-wider text-sm"
